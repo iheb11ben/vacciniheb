@@ -8,17 +8,17 @@ import { ParentService } from 'src/app/service/parent.service';
   styleUrls: ['./parent-list.component.scss']
 })
 export class ParentListComponent implements OnInit {
-parent!:Parent[]
-  constructor(private parentService:ParentService) { }
+  parent!: Parent[]
+  constructor(private parentService: ParentService) { }
 
   ngOnInit(): void {
     this.getAllParentController()
   }
-  getAllParentController(){
-    this.parent=this.parentService.getAllParentService()
-}
-deleteByName(name:string){
-  this.parentService.deleteParentServiceByName(name)
-  
-}
+  getAllParentController() {
+    this.parent = this.parentService.getAllParentService()
+  }
+  deleteByName(name: string) {
+    this.parentService.deleteParentServiceByName(name)
+    this.parent = this.parentService.getAllParentService()
+  }
 }

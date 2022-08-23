@@ -12,9 +12,13 @@ export class VaccinListComponent implements OnInit {
   constructor(private vaccinService:VaccinService) { }
 vaccin:Vaccin[]=[]
   ngOnInit(): void {
-    
+    this.vaccin=this.vaccinService.getAllVaccinService()
   }
 getAllVaccinController(){
+  this.vaccin=this.vaccinService.getAllVaccinService()
+}
+deleteParentControllerByName(name:string){
+  this.vaccinService.deleteParentServiceByName(name)
   this.vaccin=this.vaccinService.getAllVaccinService()
 }
 }

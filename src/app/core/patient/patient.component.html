@@ -2,22 +2,26 @@
     <form>
         <div class="form-group">
             <label>Nom de Patient</label>
-            <input [(ngModel)]="patient.nom" type="text" class="form-control" />
-            <div class="invalid-feedback">
-                <div>Name is required</div>
+            <input  name="patient" [(ngModel)]="patient.nom" type="text"  class="form-control"
+                 />
+            <div  class="invalid-feedback">
+                <div >Name is required</div>
             </div>
+          <br>  <label>Nom de Parent</label>
         </div>
         <div class="input-group mb-1">
            
             <select  class="form-control" >
-                <br>
-                <option [selected]="parent.nom==patient.parent.nom" >Son Parent</option>
+               
+                <label>Nom de Patient</label>
+                <option *ngFor="let p of parents" >{{p.nom}}</option>
               </select>
     </div>
+    
 <br>
         <div class="input-group mb-3">
             <span class="input-group-text">Date De Naissance</span>
-          <input [(ngModel)]="patient.dateNaissance" type="date" aria-label="Date De Naissance" class="form-control">
+          <input name="naissance" [(ngModel)]="patient.dateNaissance" type="date" aria-label="Date De Naissance" class="form-control">
         </div>
 
 

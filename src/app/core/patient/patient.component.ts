@@ -11,11 +11,12 @@ import { PatientService } from 'src/app/service/patient.service';
 })
 export class PatientComponent implements OnInit {
   patients:Patient[]=[]
-  patient!:Patient
+  patient:Patient
   parent!:Parent
+  parents:Parent[]
   constructor(private patientService:PatientService, private parentService:ParentService) { 
-    
-  }
+    this.parents=this.parentService.getAllParentService()
+    this.patient={dateNaissance:new Date("01/01/2010"),nom:"",parent:this.parents[0]}}
   ngOnInit(): void {
     this.patients=this.patientService.getAllPatientService()
 
