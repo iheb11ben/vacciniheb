@@ -39,7 +39,7 @@
                             
                             <td>{{p.nom}}</td>
                             <td>{{p.parent.nom}}</td>
-                            <td>{{p.dateNaissance}}</td>
+                            <td>{{p.dateNaissance| date : 'mediumDate'}}</td>
                             
                               <td><button type="button" class="btn btn-danger"  >Supprimer (click)="deleteByName(patient.nom)" </button>
                               <button type="button" class="btn btn-success" >Modifier</button></td>
