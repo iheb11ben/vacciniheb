@@ -65,6 +65,8 @@ import { VaccinListComponent } from './core/vaccin/vaccin-list/vaccin-list.compo
 import { JourFerieeListComponent } from './core/jour-feriee/jour-feriee-list/jour-feriee-list.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutComponent } from './core/acceuil/layout/layout/layout.component';
+import { HomeComponent } from './core/home/home.component';
+import { LoginComponent } from './core/login/login.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +85,9 @@ import { LayoutComponent } from './core/acceuil/layout/layout/layout.component';
     JourFerieeComponent,
     JourFerieeListComponent,
     PatientVaccinComponent,
-    LayoutComponent
+    LayoutComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

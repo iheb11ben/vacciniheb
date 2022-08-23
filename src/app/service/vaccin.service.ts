@@ -21,4 +21,8 @@ vaccin!:Vaccin[]
    getAllVaccinService(){
     return this.vaccin;
    }
+   deleteParentServiceByName(name: string) {
+    console.log(name);
+    this.vaccin = this.vaccin.filter(obj => obj.nom != name)
+  }
 }
