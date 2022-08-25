@@ -67,6 +67,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutComponent } from './core/acceuil/layout/layout/layout.component';
 import { HomeComponent } from './core/home/home.component';
 import { LoginComponent } from './core/login/login.component';
+import { LoginnComponent } from './core/loginn/loginn.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { LoginComponent } from './core/login/login.component';
     PatientVaccinComponent,
     LayoutComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    LoginnComponent
   ],
   imports: [
     BrowserModule,

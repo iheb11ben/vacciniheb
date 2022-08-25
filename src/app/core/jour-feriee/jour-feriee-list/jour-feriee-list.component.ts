@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JourFeriee } from 'src/app/model/jour-feriee';
+import { JourFerieeService } from 'src/app/service/jour-feriee.service';
 
 @Component({
   selector: 'app-jour-feriee-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JourFerieeListComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  jourFeriees:JourFeriee[]=[]
+  constructor(private jourFerieeService:JourFerieeService) { 
+   
   }
 
+  ngOnInit(): void {
+    this.jourFeriees=this.jourFerieeService.getAlljourFeriees()
+
+  }
+  deleteByName(name:string){
+    
+    this.jourFerieeService.deleteByName(name)
+    this.jourFeriees=this.jourFerieeService.getAlljourFeriees()
+
+  }
 }

@@ -1,1 +1,42 @@
-<p>jour-feriee works!</p>
+<div class="product-form">
+    <form>
+        <div class="form-group">
+            <label>Nom</label>
+            <input [(ngModel)]="jourFeriee.jourFeriee" name="gf" type="text"  class="form-control"
+                 />
+            <div  class="invalid-feedback">
+                <div >Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            <input [(ngModel)]="jourFeriee.dateJF" type="date"  class="form-control"
+                 />
+            <div  class="invalid-feedback">
+                <div >Date is required</div>
+            </div>
+        </div>
+    </form>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" routerLink="../" (click)=" add()">Ajouter</button>
+        <button type="button"  class="btn btn-warning float-right">
+            Reset
+        </button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,6 +3,7 @@ import { Parent } from 'src/app/model/parent';
 import { Patient } from 'src/app/model/patient';
 import { ParentService } from 'src/app/service/parent.service';
 import { PatientService } from 'src/app/service/patient.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-patient',
@@ -11,15 +12,26 @@ import { PatientService } from 'src/app/service/patient.service';
 })
 export class PatientComponent implements OnInit {
   patients:Patient[]=[]
-  patient:Patient
+  patient!:Patient
   parent!:Parent
   parents:Parent[]
+  date:any
+  date12!:string;
   constructor(private patientService:PatientService, private parentService:ParentService) { 
+      this.date=new Date("01/01/2010")
     this.parents=this.parentService.getAllParentService()
-    this.patient={dateNaissance:new Date("01/01/2010"),nom:"",parent:this.parents[0]}}
+    // this.patient={dateNaissance:this.date.moment.format("MMM Do YY"),nom:"",parent:this.parents[0]}
+  
+  
+  };
+    
+    
   ngOnInit(): void {
     this.patients=this.patientService.getAllPatientService()
-
+    console.log('moment test', this.patient);
+    
+    console.log(moment().subtract(10, 'days').calendar());
+    
   }
   
   getAllPatientController(){
